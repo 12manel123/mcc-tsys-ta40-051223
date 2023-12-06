@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <h2>Search Results for "{{ searchTerm }}"</h2>
+    <div class="row">
+        @for (character of searchResults; track $index) {
+        <div class="col-md-2">
+            <div class="card">
+                <img src="{{ character.image }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ character.name }}</h5>
+                    <button (click)="showCharacterInfo(character)" class="btn btn-warning card-button">+ Info</button>
+                </div>
+            </div>
+        </div>}
+    </div>
+</div>

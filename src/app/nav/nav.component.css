@@ -1,0 +1,17 @@
+nav {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    margin-right: 5px;
+}
+
+a{
+    margin-left: 5px;
+    margin-right: 5px;
+}
