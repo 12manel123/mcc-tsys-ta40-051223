@@ -23,7 +23,7 @@ export class RandomCharactersComponent implements OnInit {
   }
 
   showCharacter(character: any) {
-    const characterId = character.id; // Asumiendo que hay una propiedad "id" en tu objeto character
+    const characterId = character.id;
     this.router.navigate(['/character', characterId]);
   }
 }

@@ -27,8 +27,9 @@ export const routes: Routes = [
         path: 'search/:term', component: SearchComponent 
     },
     { 
-        path: '**', component: ErrorComponent 
-    }
+        path: 'not-found', component: ErrorComponent 
+    },
+    { path: '**', redirectTo: '/not-found' },
     
 ];
 

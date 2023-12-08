@@ -20,7 +20,7 @@ export class CharactersComponent implements OnInit {
 
   loadCharacters() {
     this.rickmortyService.getCharacters().subscribe((data: any) => {
-      this.characters = data.results.slice(0, 18);
+      this.characters = data.results.slice(0, 12);
     });
   }
 

@@ -38,10 +38,6 @@ export class RickmortyService {
     return this.http.get<any[]>(searchUrl);
   }
 
-  getCharacterInfo(character: any): string {
-    return `Name: ${character.name}\nStatus: ${character.status}\nSpecies: ${character.species}\nType: ${character.type}\nGender: ${character.gender}`;
-  }
-
   getCharacterById(characterId: number): Observable<any> {
     const url = `https://rickandmortyapi.com/api/character/${characterId}`;
     return this.http.get<any>(url);
