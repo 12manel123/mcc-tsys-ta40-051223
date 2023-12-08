@@ -1,27 +1,31 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { RickmortyService } from '../services/rickmorty.service';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
 })
 export class CharactersComponent implements OnInit {
   characters: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private rickmortyService: RickmortyService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadCharacters();
   }
 
   loadCharacters() {
-    this.http.get('https://rickandmortyapi.com/api/character').subscribe((data: any) => {
-      this.characters = data.results.slice(0, 18);//Limit of characters max 18 characters
+    this.rickmortyService.getCharacters().subscribe((data: any) => {
+      this.characters = data.results.slice(0, 18);
     });
   }
-  showCharacterInfo(character: any) {//Show the character with alert message
-    alert(`Name: ${character.name}\nStatus: ${character.status}\nSpecies: ${character.species}\nType: ${character.type}\nGender: ${character.gender}`);
+
+  showCharacter(character: any) {
+    const characterId = character.id; // Asumiendo que hay una propiedad "id" en tu objeto character
+    this.router.navigate(['/character', characterId]);
   }
 }

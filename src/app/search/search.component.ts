@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RickmortyService } from '../services/rickmorty.service';
 
 @Component({
   selector: 'app-search',
@@ -12,8 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchComponent implements OnInit {
   searchTerm: string = '';
   searchResults: any[] = [];
-
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  selectedCharacter: any;
+  constructor(private route: ActivatedRoute,private rickMortyService: RickmortyService, private router: Router) {}
 
   ngOnInit(): void {//Obtains the search term
     this.route.params.subscribe(params => {
@@ -22,13 +23,14 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  search() {//Search name in the API and return results
-    const searchUrl = `https://rickandmortyapi.com/api/character/?name=${this.searchTerm}`;
-    this.http.get(searchUrl).subscribe((data: any) => {
+  search() {
+    this.rickMortyService.searchCharactersByName(this.searchTerm).subscribe((data: any) => {
       this.searchResults = data.results;
     });
   }
-  showCharacterInfo(character: any) {
-    alert(`Name: ${character.name}\nStatus: ${character.status}\nSpecies: ${character.species}\nType: ${character.type}\nGender: ${character.gender}`);
+
+  showCharacter(character: any) {
+    const characterId = character.id; // Asumiendo que hay una propiedad "id" en tu objeto character
+    this.router.navigate(['/character', characterId]);
   }
 }
