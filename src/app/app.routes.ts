@@ -5,6 +5,8 @@ import { RandomCharactersComponent } from './random-characters/random-characters
 import { SearchComponent } from './search/search.component';
 import { ErrorComponent } from './error/error.component';
 import { CharacterComponent } from './character/character.component';
+import { CharactersApiComponent } from './characters-api/characters-api.component';
+import { CharacterApiComponent } from './character-api/character-api.component';
 
 
 export const routes: Routes = [
@@ -17,8 +19,15 @@ export const routes: Routes = [
     {
         path: 'characters', component: CharactersComponent
     },
+    
+    {
+        path: 'charactersApi', component: CharactersApiComponent
+    },
     { 
-        path: 'character/:id', component: CharacterComponent 
+        path: 'characterApi/:id', component: CharacterApiComponent 
+    },
+    { 
+        path: 'characters/:id', component: CharacterComponent 
     },
     {
         path: 'randomcharacters', component: RandomCharactersComponent
@@ -29,7 +38,9 @@ export const routes: Routes = [
     { 
         path: 'not-found', component: ErrorComponent 
     },
-    { path: '**', redirectTo: '/not-found' },
+    { 
+        path: '**', redirectTo: '/not-found' 
+    }
     
 ];
 
