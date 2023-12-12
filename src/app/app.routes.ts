@@ -31,7 +31,7 @@ export const routes: Routes = [
         path: 'characterApi/:id', component: CharacterApiComponent 
     },
     { 
-        path: 'characters/:id', component: CharacterComponent 
+        path: 'character/:id', component: CharacterComponent 
     },
     {
         path: 'randomcharacters', component: RandomCharactersComponent
