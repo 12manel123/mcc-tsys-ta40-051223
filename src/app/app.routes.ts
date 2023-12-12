@@ -7,6 +7,7 @@ import { ErrorComponent } from './error/error.component';
 import { CharacterComponent } from './character/character.component';
 import { CharactersApiComponent } from './characters-api/characters-api.component';
 import { CharacterApiComponent } from './character-api/character-api.component';
+import { FormComponent } from './form/form.component';
 
 
 export const routes: Routes = [
@@ -22,6 +23,9 @@ export const routes: Routes = [
     
     {
         path: 'charactersApi', component: CharactersApiComponent
+    },
+    {
+        path: 'newcharacter', component: FormComponent
     },
     { 
         path: 'characterApi/:id', component: CharacterApiComponent 

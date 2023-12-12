@@ -4,10 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HttpClientModule,NavComponent,DatePipe],
+  imports: [RouterOutlet, HttpClientModule,NavComponent,DatePipe,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

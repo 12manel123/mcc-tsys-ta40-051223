@@ -28,4 +28,7 @@ export class RickmortyApiService {
     const url = `${this.apiUrl}/${characterId}`;
     return this.http.delete<any>(url);
   }
+  addCharacter(newCharacter: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, newCharacter);
+  }
 }
