@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   selectedCharacter: any;
   constructor(private route: ActivatedRoute,private rickMortyService: RickmortyService, private router: Router) {}
 
-  ngOnInit(): void {//Obtains the search term
+  ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.searchTerm = params['term'];
       this.search();
