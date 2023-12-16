@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RickmortyApiService {
-  private apiUrl = 'http://localhost:3000/characters';
+  private apiUrl = 'https://mcc-tsys-ta43-111223-production.up.railway.app/characters';
 
   constructor(private http: HttpClient) {}
 
