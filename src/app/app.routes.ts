@@ -1,43 +1,30 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { CharactersComponent } from './characters/characters.component';
-import { RandomCharactersComponent } from './random-characters/random-characters.component';
-import { SearchComponent } from './search/search.component';
 import { ErrorComponent } from './error/error.component';
-import { CharacterComponent } from './character/character.component';
-import { CharactersApiComponent } from './characters-api/characters-api.component';
-import { CharacterApiComponent } from './character-api/character-api.component';
-import { FormComponent } from './form/form.component';
+import { MovieComponent } from './movie/movie.component';
+import { MoviesComponent } from './movies/movies.component';
+import { SeriesComponent } from './series/series.component';
+import { SerieComponent } from './serie/serie.component';
+
 
 
 export const routes: Routes = [
     {
-        path: '', redirectTo: '/characters', pathMatch: 'full'
+        path: '', redirectTo: '/movies', pathMatch: 'full'
     },
-    {
-        path: 'about', component: AboutComponent
-    },
-    {
-        path: 'characters', component: CharactersComponent
-    },
+
+
     
     {
-        path: 'charactersApi', component: CharactersApiComponent
+        path: 'movies', component: MoviesComponent
     },
     {
-        path: 'newcharacter', component: FormComponent
-    },
-    { 
-        path: 'characterApi/:id', component: CharacterApiComponent 
-    },
-    { 
-        path: 'character/:id', component: CharacterComponent 
+        path: 'movie/:id', component: MovieComponent
     },
     {
-        path: 'randomcharacters', component: RandomCharactersComponent
+        path: 'series', component: SeriesComponent
     },
-    { 
-        path: 'search/:term', component: SearchComponent 
+    {
+        path: 'serie/:id', component: SerieComponent
     },
     { 
         path: 'not-found', component: ErrorComponent 

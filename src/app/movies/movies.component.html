@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h2>All movies</h2>
+    <div class="row">
+        @for (movie of movies; track $index) {
+        <div class="col-md-2" >
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.id }}</h5>
+                    <h5 class="card-title">{{ movie.adult }}</h5>
+                    <h5 class="card-title">{{ movie.original_title }}</h5>
+                    <h5 class="card-title">{{ movie.overview }}</h5>
+                    <!--<img class="img-responsive" src="{{movie.backdrop_path}}">--><!--TODO NO SE DONDE OBTENER LOS DATOS DE LA IAMGNE-->
+                    <button (click)="showCharacter(movie)" class="btn btn-warning card-button">+ Info</button>
+                </div>
+            </div>
+        </div>}
+    </div>
+</div>
